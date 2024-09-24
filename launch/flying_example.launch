@@ -1,0 +1,16 @@
+<launch>
+
+
+
+    
+    <node pkg="fmt_ros_wrapper" type="flying_example" name="flying_example" output="screen">
+    </node>
+
+    <node pkg="fmt_ros_wrapper" type="sensor_ros_wrapper" name="sensor_ros_wrapper" output="screen">
+    </node>
+
+    <node pkg="fmt_ros_wrapper" type="transform_ros_wrapper" name="transform_ros_wrapper" output="screen">
+    </node>
+
+
+</launch>

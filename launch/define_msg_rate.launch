@@ -1,0 +1,6 @@
+<launch>
+
+    <node name="define_msg_rate" pkg="fmt_ros_wrapper" type="define_msg_rate" output="screen">
+    </node>
+
+</launch>
