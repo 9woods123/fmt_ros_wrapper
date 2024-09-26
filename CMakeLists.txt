@@ -10,8 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(PCL REQUIRED QUIET)
-
-
+find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 catkin_package(
 
@@ -25,6 +24,7 @@ CATKIN_DEPENDS
  pcl_conversions
  pcl_ros
  geometry_msgs
+ tf
 )
 
 
@@ -33,6 +33,7 @@ include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 
@@ -53,12 +54,20 @@ target_link_libraries(define_msg_rate
 add_executable(sensor_ros_wrapper src/sensor_ros_wrapper.cpp)
 target_link_libraries(sensor_ros_wrapper
   ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
 )
 
 add_executable(transform_ros_wrapper src/transform_ros_wrapper.cpp)
 target_link_libraries(transform_ros_wrapper
   ${catkin_LIBRARIES}
 )
+
+
+add_executable(gettf_from_mavros src/gettf_from_mavros.cpp)
+target_link_libraries(gettf_from_mavros
+  ${catkin_LIBRARIES} 
+)
+
 
 
 

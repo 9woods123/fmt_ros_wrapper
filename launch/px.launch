@@ -3,8 +3,10 @@
     <!-- vim: set ft=xml noet : -->
     <!-- example launch script for PX4 based FCU's -->
     <!-- qemu udp:192.168.1.6:14551@192.168.1.10:14554 -->
-
+    <!-- <arg name="fcu_url" default="udp://192.168.1.114:14554@192.168.1.115:14551" /> -->
     <arg name="fcu_url" default="udp://:14551@:14554" />
+
+
     <arg name="gcs_url" default="" />
     <arg name="tgt_system" default="1" />
     <arg name="tgt_component" default="1" />
