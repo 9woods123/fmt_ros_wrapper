@@ -2,7 +2,7 @@
 
 
     
-    <node pkg="fmt_ros_wrapper" type="flying_example" name="flying_example" output="screen">
+    <node pkg="fmt_ros_wrapper" type="example" name="example" output="screen">
     </node>
 
     <node pkg="fmt_ros_wrapper" type="gettf_from_mavros" name="gettf_from_mavros" output="screen">

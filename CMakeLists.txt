@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   roscpp
+  tf
 )
 
 find_package(PCL REQUIRED QUIET)
@@ -38,8 +39,8 @@ include_directories(
 
 
 
-add_executable(flying_example src/flying_example.cpp)
-target_link_libraries(flying_example
+add_executable(example src/example.cpp)
+target_link_libraries(example
   ${catkin_LIBRARIES}
 )
 

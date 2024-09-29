@@ -4,6 +4,8 @@
 #include <arpa/inet.h>
 #include <boost/asio.hpp>
 #include <sensor_msgs/point_cloud2_iterator.h>
+#include <tf/transform_listener.h>
+#include <tf/transform_datatypes.h>
 
 #define UDP_PORT 14556
 #define NUM_FLOATS_PER_VECTOR 3 // 每个点只包含 x, y, z
@@ -61,34 +63,54 @@ class PointCloudPublisher {
             publish_point_cloud(buffer, n);
         }
 
-        void publish_point_cloud(const char* data, int length) {
-            int num_points = length / (NUM_FLOATS_PER_VECTOR * sizeof(float));
 
+        void publish_point_cloud(const char* data, int length) {
+            // 确保数据长度足够包含时间戳
+            if (length < sizeof(float)) {
+                ROS_WARN("Received data is too short to contain a timestamp.");
+                return;
+            }
+
+            // 计算点的数量
+            int num_points = (length - sizeof(float)) / (NUM_FLOATS_PER_VECTOR * sizeof(float)); // 减去时间戳的长度
+
+            // 解析时间戳
+            const float* receivedData = reinterpret_cast<const float*>(data); // 将数据转换为 const float*
+            float timestamp = *receivedData; // 第一个浮点数是时间戳
+
+            // 创建 PointCloud2 消息
             sensor_msgs::PointCloud2 msg;
-            msg.header.frame_id = "lidar"; // 设置坐标系
-            msg.header.stamp = ros::Time::now();
+            msg.header.frame_id = "base_link"; // 设置坐标系
+            msg.header.stamp = ros::Time(timestamp); // 设置消息的时间戳
+
+            std::cout<<"timestamp ORIGIN"<<timestamp<<std::endl;
+            std::cout<<"time now ORIGIN"<<ros::Time::now().toSec()<<std::endl;
+
             msg.fields.resize(3);
             setup_fields(msg);
+            msg.point_step = sizeof(float) * 3; // 每个点的字节数
+            msg.width = num_points; // 点的数量
+            msg.height = 1; // 高度设置为1，表示一维点云
+            msg.row_step = msg.point_step * num_points; // 每行的字节数
+            msg.is_dense = true; // 数据是否是密集的
 
+            // 确保消息数据大小正确
             msg.data.resize(num_points * msg.point_step);
-            float* ptr = reinterpret_cast<float*>(msg.data.data());
 
             // 复制数据到消息
-            const float* received_data = reinterpret_cast<const float*>(data);
+            float* ptr = reinterpret_cast<float*>(msg.data.data());
+            const float* received_data = reinterpret_cast<const float*>(data + sizeof(float)); // 跳过时间戳
             for (int i = 0; i < num_points; ++i) {
                 ptr[i * 3]     = received_data[i * 3];         // x
                 ptr[i * 3 + 1] = -received_data[i * 3 + 1]; // y (UE4使用左手坐标系)
-                ptr[i * 3 + 2] = received_data[i * 3 + 2]; // z
+                ptr[i * 3 + 2] = received_data[i * 3 + 2];     // z
             }
 
-            msg.point_step = sizeof(float) * 3;
-            msg.width = num_points;
-            msg.height = 1;
-            msg.row_step = msg.point_step * num_points;
-            msg.is_dense = true;
-
+            // 发布消息
             pub.publish(msg);
         }
+
+
 
         void setup_fields(sensor_msgs::PointCloud2& msg) {
 
