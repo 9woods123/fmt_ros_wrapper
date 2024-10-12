@@ -70,5 +70,9 @@ target_link_libraries(gettf_from_mavros
 )
 
 
+add_executable(cmd2fmt src/cmd2fmt.cpp)
+target_link_libraries(cmd2fmt
+  ${catkin_LIBRARIES} 
+)
 
 
