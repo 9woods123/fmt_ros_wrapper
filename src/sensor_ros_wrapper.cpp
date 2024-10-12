@@ -81,10 +81,16 @@ class PointCloudPublisher {
             // 创建 PointCloud2 消息
             sensor_msgs::PointCloud2 msg;
             msg.header.frame_id = "base_link"; // 设置坐标系
+
+
+            // woods TODO 同步时间帧，如果没有好的办法，只能减去一个delay time
             msg.header.stamp = ros::Time(timestamp); // 设置消息的时间戳
 
-            std::cout<<"timestamp ORIGIN"<<timestamp<<std::endl;
-            std::cout<<"time now ORIGIN"<<ros::Time::now().toSec()<<std::endl;
+            // std::cout<<"timestamp ORIGIN"<<timestamp<<std::endl;
+            // std::cout<<"time now ORIGIN"<<ros::Time::now().toSec()<<std::endl;
+
+
+            msg.header.stamp = ros::Time::now() - ros::Duration(0.01);
 
             msg.fields.resize(3);
             setup_fields(msg);
