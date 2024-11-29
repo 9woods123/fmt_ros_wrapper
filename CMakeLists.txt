@@ -51,12 +51,28 @@ target_link_libraries(define_msg_rate
   ${catkin_LIBRARIES}
 )
 
+## 不分包
+# add_executable(sensor_ros_wrapper src/sensor_ros_wrapper_origin.cpp)
+# target_link_libraries(sensor_ros_wrapper
+#   ${catkin_LIBRARIES}
+#   ${Boost_LIBRARIES}
+# )
 
+
+# 分包重组，仍然存在效率问题
 add_executable(sensor_ros_wrapper src/sensor_ros_wrapper.cpp)
 target_link_libraries(sensor_ros_wrapper
   ${catkin_LIBRARIES}
   ${Boost_LIBRARIES}
 )
+
+
+add_executable(img_ros_wrapper src/img_ros_wrapper.cpp)
+target_link_libraries(img_ros_wrapper
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+
 
 add_executable(transform_ros_wrapper src/transform_ros_wrapper.cpp)
 target_link_libraries(transform_ros_wrapper
