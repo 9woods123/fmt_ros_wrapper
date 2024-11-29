@@ -12,6 +12,7 @@
 #define NUM_FLOATS_PER_VECTOR 3 // 每个点包含 x, y, z
 #define UDP_MTU 1000
 
+
 // 数据包头部定义
 struct PacketHeader {
     uint32_t seq_num;            // 当前包在整段数据中的位置
@@ -121,7 +122,7 @@ private:
     // 计算执行时间
     std::chrono::duration<double> elapsed = end - start;
     std::cout << "Data received and processed in: " << 1000*elapsed.count() << " ms." << std::endl;
-    // 重组 耗时 1ms内。
+    // 重组 耗时 1ms内
     }
 
     void publish_point_cloud(const char* data, int length) {

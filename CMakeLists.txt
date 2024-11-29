@@ -8,10 +8,12 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   roscpp
   tf
+  cv_bridge
 )
 
 find_package(PCL REQUIRED QUIET)
 find_package(Boost REQUIRED COMPONENTS system filesystem)
+find_package(OpenCV REQUIRED)
 
 catkin_package(
 
@@ -26,7 +28,10 @@ CATKIN_DEPENDS
  pcl_ros
  geometry_msgs
  tf
+ cv_bridge
 )
+
+
 
 
 
@@ -35,6 +40,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 
@@ -71,6 +77,7 @@ add_executable(img_ros_wrapper src/img_ros_wrapper.cpp)
 target_link_libraries(img_ros_wrapper
   ${catkin_LIBRARIES}
   ${Boost_LIBRARIES}
+  ${OpenCV_LIBRARIES}
 )
 
 
