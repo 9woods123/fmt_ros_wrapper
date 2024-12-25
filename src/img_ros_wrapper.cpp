@@ -6,8 +6,11 @@
 #include <arpa/inet.h>
 #include <boost/asio.hpp>
 
-#define UDP_PORT 14600
+#define UDP_PORT 50503
 #define UDP_MTU 1000
+
+// sudo sysctl -w net.core.rmem_max=8388608
+// sudo sysctl -w net.core.rmem_default=8388608
 
 // 图像数据包头部定义
 struct CameraPacketHeader {
@@ -32,10 +35,13 @@ public:
     }
 
     void run() {
+
         while (ros::ok()) {
+
             receive_data();
         }
     }
+
 
 private:
     ros::Publisher image_pub;
@@ -54,21 +60,41 @@ private:
             exit(-1);
         }
 
+        // 设置地址信息
         bzero((char*)&serv_addr, sizeof(serv_addr));
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
         serv_addr.sin_port = htons(UDP_PORT);
 
+        int recvBufSize = 200 * 1024 * 1024; // 20MB 缓冲区
+        setsockopt(sockfd, SOL_SOCKET, SO_RCVBUF, &recvBufSize, sizeof(recvBufSize));
+
+        // 绑定套接字
         if (bind(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
             ROS_ERROR("ERROR on binding");
             exit(-1);
         }
+
+        // 设置套接字为非阻塞模式
+        // int flags = fcntl(sockfd, F_GETFL, 0);
+        // if (flags < 0) {
+        //     ROS_ERROR("ERROR getting socket flags");
+        //     exit(-1);
+        // }
+
+        // if (fcntl(sockfd, F_SETFL, flags | O_NONBLOCK) < 0) {
+        //     ROS_ERROR("ERROR setting socket to non-blocking mode");
+        //     exit(-1);
+        // }
+
     }
+
+
 
     void receive_data() {
 
-        char buffer[UDP_MTU * 10000];
 
+        char buffer[UDP_MTU * 200];
         // 接收数据包
         int n = recvfrom(sockfd, buffer, sizeof(buffer), 0, (struct sockaddr*)&cli_addr, &clilen);
 
@@ -81,8 +107,13 @@ private:
         CameraPacketHeader header;
         std::memcpy(&header, buffer, sizeof(CameraPacketHeader));
 
+        // std::cout<<"header.seq_num"<<header.seq_num<<std::endl;
+
         // 如果接收到新的包组，清空缓存并更新总包数
         if (header.seq_num == 0) {
+            std::cout <<"clear"<<std::endl;
+            std::cout <<"packet_buffer "<<packet_buffer.size()<<std::endl;
+
             packet_buffer.clear();  // 清空缓存
             total_packets_expected = header.total_pkgs_num;  // 更新组的总包数
         }
@@ -96,8 +127,10 @@ private:
             std::memcpy(&img_meta_data, buffer + sizeof(CameraPacketHeader), sizeof(ImageMetaData));
         }
 
+
         // 检查是否收到所有数据包
         if (packet_buffer.size() == total_packets_expected) {
+
             // 重组数据包
             std::vector<uint8_t> complete_data;
             for (int i = 0; i < total_packets_expected; i++) {
@@ -110,7 +143,8 @@ private:
                 }
             }
 
-            // 去掉最前面的头部部分（包含 PacketHeader 和 ImageMetaData）
+            // 去掉最前面的头部部分（包含 PacketHeader 和 ImageMetaData_)
+
             std::vector<uint8_t> image_data(complete_data.begin() + sizeof(ImageMetaData), complete_data.end());
 
             // 检查图像头部标识符
@@ -137,9 +171,9 @@ private:
         // 将 RGB 转为 BGR，OpenCV 默认是 BGR 格式
         cv::cvtColor(img, img, cv::COLOR_RGB2BGR);
 
-        // 显示图像
-        cv::imshow("Received Image", img);  // 显示图像窗口
-        cv::waitKey(1);  // 等待一个小的时间，更新窗口（通常 1 毫秒就足够）
+        // // 显示图像
+        // cv::imshow("Received Image", img);  // 显示图像窗口
+        // cv::waitKey(1);  // 等待一个小的时间，更新窗口（通常 1 毫秒就足够）
 
         // 转换为 ROS 图像消息
         sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", img).toImageMsg();
