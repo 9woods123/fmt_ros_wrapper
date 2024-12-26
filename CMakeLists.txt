@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   tf
   cv_bridge
+  image_transport
 )
 
 find_package(PCL REQUIRED QUIET)
@@ -29,6 +30,7 @@ CATKIN_DEPENDS
  geometry_msgs
  tf
  cv_bridge
+ image_transport
 )
 
 
@@ -36,7 +38,7 @@ CATKIN_DEPENDS
 
 
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
@@ -98,4 +100,16 @@ target_link_libraries(cmd2fmt
   ${catkin_LIBRARIES} 
 )
 
+
+add_library(image_udp_receiver src/image_udp_receiver.cpp)
+target_link_libraries(image_udp_receiver
+  ${catkin_LIBRARIES} 
+  ${Boost_LIBRARIES}
+  ${OpenCV_LIBRARIES}
+)
+
+add_executable(image_ros_wrapper src/image_ros_wrapper.cpp)
+target_link_libraries(image_ros_wrapper
+  image_udp_receiver
+)
 

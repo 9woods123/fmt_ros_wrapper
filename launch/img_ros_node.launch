@@ -1,6 +1,9 @@
 <launch>
 
-    <node pkg="fmt_ros_wrapper" type="img_ros_wrapper" name="img_ros_wrapper" output="screen">
+    <!-- <node pkg="fmt_ros_wrapper" type="img_ros_wrapper" name="img_ros_wrapper" output="screen">
+    </node> -->
+    
+    <node pkg="fmt_ros_wrapper" type="image_ros_wrapper" name="image_ros_wrapper" output="screen">
     </node>
 
 </launch>
