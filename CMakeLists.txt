@@ -47,12 +47,6 @@ include_directories(
 
 
 
-add_executable(example src/example.cpp)
-target_link_libraries(example
-  ${catkin_LIBRARIES}
-)
-
-
 
 add_executable(define_msg_rate src/define_msg_rate.cpp)
 target_link_libraries(define_msg_rate
@@ -77,12 +71,6 @@ target_link_libraries(sensor_ros_wrapper
 add_executable(transform_ros_wrapper src/transform_ros_wrapper.cpp)
 target_link_libraries(transform_ros_wrapper
   ${catkin_LIBRARIES}
-)
-
-
-add_executable(gettf_from_mavros src/gettf_from_mavros.cpp)
-target_link_libraries(gettf_from_mavros
-  ${catkin_LIBRARIES} 
 )
 
 
