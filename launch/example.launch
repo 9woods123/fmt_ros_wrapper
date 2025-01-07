@@ -5,16 +5,13 @@
     <node pkg="fmt_ros_wrapper" type="example" name="example" output="screen">
     </node>
 
-    <node pkg="fmt_ros_wrapper" type="gettf_from_mavros" name="gettf_from_mavros" output="screen">
-    </node>
-
     <node pkg="fmt_ros_wrapper" type="transform_ros_wrapper" name="transform_ros_wrapper" output="screen">
     </node>
 
     <!-- <node pkg="fmt_ros_wrapper" type="sensor_ros_wrapper" name="sensor_ros_wrapper" output="screen">
     </node> -->
-
-    <node pkg="fmt_ros_wrapper" type="img_ros_wrapper" name="img_ros_wrapper" output="screen">
+   
+    <node pkg="fmt_ros_wrapper" type="image_ros_wrapper" name="image_ros_wrapper" output="screen">
     </node>
-
+    
 </launch>

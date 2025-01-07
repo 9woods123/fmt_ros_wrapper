@@ -74,15 +74,6 @@ target_link_libraries(sensor_ros_wrapper
   ${Boost_LIBRARIES}
 )
 
-
-add_executable(img_ros_wrapper src/img_ros_wrapper.cpp)
-target_link_libraries(img_ros_wrapper
-  ${catkin_LIBRARIES}
-  ${Boost_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-)
-
-
 add_executable(transform_ros_wrapper src/transform_ros_wrapper.cpp)
 target_link_libraries(transform_ros_wrapper
   ${catkin_LIBRARIES}
@@ -113,3 +104,31 @@ target_link_libraries(image_ros_wrapper
   image_udp_receiver
 )
 
+
+
+# offboard example
+
+add_executable(car_offboard src/offboard_example/car_offboard.cpp)
+target_link_libraries(car_offboard
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+
+add_executable(boat_offboard src/offboard_example/boat_offboard.cpp)
+target_link_libraries(boat_offboard
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+
+add_executable(submarine_offboard src/offboard_example/submarine_offboard.cpp)
+target_link_libraries(submarine_offboard
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+
+
+add_executable(drone_offboard src/offboard_example/drone_offboard.cpp)
+target_link_libraries(drone_offboard
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
