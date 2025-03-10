@@ -62,11 +62,12 @@ int main(int argc, char** argv)
 
         // Set velocities (submarine-specific)
         
-        setpoint_msg.velocity.y = 2.5;
-        setpoint_msg.velocity.z = -0.5 * dir;  // Up and down direction based on 'dir'
+        setpoint_msg.velocity.y = 4;
+        // setpoint_msg.velocity.z = 0.5 * dir;  // Up and down direction based on 'dir'
+        setpoint_msg.velocity.z = 0;  // Up and down direction based on 'dir'
 
         // Set yaw rate (based on 'dir')
-        setpoint_msg.yaw_rate = 50 * PI / 360.0f * dir;
+        setpoint_msg.yaw_rate = 600 * PI / 360.0f * dir;
 
         setpoint_pub.publish(setpoint_msg);
 

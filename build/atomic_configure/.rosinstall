@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build/devel/setup.sh

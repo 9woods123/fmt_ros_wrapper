@@ -2,7 +2,7 @@
 
 
     
-    <node pkg="fmt_ros_wrapper" type="example" name="example" output="screen">
+    <node pkg="fmt_ros_wrapper" type="drone_offboard" name="drone_offboard" output="screen">
     </node>
 
     <node pkg="fmt_ros_wrapper" type="transform_ros_wrapper" name="transform_ros_wrapper" output="screen">

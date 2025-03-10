@@ -22,7 +22,9 @@ UdpReceiver::~UdpReceiver() {
 }
 
 bool UdpReceiver::receive_data(std::vector<uint8_t>& out_image_data, ImageMetaData& out_metadata) {
+
     char buffer[UDP_MTU * 200];  // 假设最大接收200个包
+
     int n = recvfrom(sockfd, buffer, sizeof(buffer), 0, (struct sockaddr*)&cli_addr, &clilen);
 
     if (n < sizeof(CameraPacketHeader)) {
@@ -36,6 +38,10 @@ bool UdpReceiver::receive_data(std::vector<uint8_t>& out_image_data, ImageMetaDa
 
     // 如果接收到新的包组，清空缓存并更新总包数
     if (header.seq_num == 0) {
+        if(packet_buffer.size()!=0)
+        {
+            std::cout<<"=================clear a packet with nonzero data================="<<std::endl;
+        }
         packet_buffer.clear();
         total_packets_expected = header.total_pkgs_num;
     }
@@ -101,11 +107,39 @@ void UdpReceiver::setup_socket() {
 }
 
 
+// void UdpReceiver::start_receiving(
+//     optional<std::chrono::milliseconds> sleep_duration,
+//     std::function<void(const std::vector<uint8_t>&, const ImageMetaData&)> callback)
+// {
+
+//     while (keep_running) {
+//         std::vector<uint8_t> image_data;
+//         ImageMetaData metadata;
+
+        
+//         if (receive_data(image_data, metadata)) {
+//             callback(image_data, metadata);  // 调用回调函数处理接收到的数据
+//         } else {
+//             //do nothing now
+//             // std::cerr << "Error or incomplete data received." << std::endl;
+//         }
+
+//         // 如果提供了暂停时间，则暂停
+//         if (sleep_duration.has_value()) {
+//             std::this_thread::sleep_for(sleep_duration.value()); 
+//              // 使用 .value() 来获取 sleep_duration 的值
+//         }
+//     }
+
+// }
+
 void UdpReceiver::start_receiving(
-    optional<std::chrono::milliseconds> sleep_duration,
+        optional<std::chrono::milliseconds> sleep_duration,
     std::function<void(const std::vector<uint8_t>&, const ImageMetaData&)> callback)
 {
     while (keep_running) {
+        auto start_time = std::chrono::high_resolution_clock::now();  // 记录开始时间
+
         std::vector<uint8_t> image_data;
         ImageMetaData metadata;
 
@@ -119,7 +153,7 @@ void UdpReceiver::start_receiving(
         // 如果提供了暂停时间，则暂停
         if (sleep_duration.has_value()) {
             std::this_thread::sleep_for(sleep_duration.value()); 
-             // 使用 .value() 来获取 sleep_duration 的值
+            // 使用 .value() 来获取 sleep_duration 的值
         }
     }
 }

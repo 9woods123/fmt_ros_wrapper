@@ -1,0 +1,85 @@
+[
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/drone_offboard.dir/src/offboard_example/drone_offboard.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/drone_offboard.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/drone_offboard.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/submarine_offboard.dir/src/offboard_example/submarine_offboard.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/submarine_offboard.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/submarine_offboard.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/boat_offboard.dir/src/offboard_example/boat_offboard.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/boat_offboard.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/boat_offboard.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/cmd2fmt.dir/src/cmd2fmt.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/cmd2fmt.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/cmd2fmt.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/transform_ros_wrapper.dir/src/transform_ros_wrapper.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/transform_ros_wrapper.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/transform_ros_wrapper.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/sensor_ros_wrapper.dir/src/sensor_ros_wrapper.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/sensor_ros_wrapper.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/sensor_ros_wrapper.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/define_msg_rate.dir/src/define_msg_rate.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/define_msg_rate.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/define_msg_rate.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/opencv4 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2    -g   -o CMakeFiles/car_offboard.dir/src/offboard_example/car_offboard.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/car_offboard.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/offboard_example/car_offboard.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2 -isystem /usr/include/opencv4    -g   -o CMakeFiles/image_ros_wrapper.dir/src/image_ros_wrapper.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/image_ros_wrapper.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/image_ros_wrapper.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"fmt_ros_wrapper\\\" -Dimage_udp_receiver_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I../include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/ni -I/usr/include/openni2 -isystem /usr/include/opencv4    -g -fPIC   -o CMakeFiles/image_udp_receiver.dir/src/image_udp_receiver.cpp.o -c /home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/image_udp_receiver.cpp",
+  "file": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/src/image_udp_receiver.cpp"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -isystem /usr/src/googletest/googlemock/include -isystem /usr/src/googletest/googlemock -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -std=c++11 -o gtest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /usr/src/googletest/googlemock/src/gmock_main.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock_main.cc"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -std=c++11 -o gtest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /usr/src/googletest/googlemock/src/gmock-all.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock-all.cc"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -std=c++11 -o gtest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/googletest/googletest/src/gtest_main.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest_main.cc"
+},
+
+{
+  "directory": "/home/amov/fmt_ws/FMT_ws/FMT-Firmware/fmt_ros_ws/src/fmt_ros_wrapper/build",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -o gtest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest-all.cc"
+}
+]

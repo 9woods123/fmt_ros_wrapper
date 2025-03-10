@@ -74,7 +74,7 @@ target_link_libraries(transform_ros_wrapper
 )
 
 
-add_executable(cmd2fmt src/cmd2fmt.cpp)
+ add_executable(cmd2fmt src/cmd2fmt.cpp)
 target_link_libraries(cmd2fmt
   ${catkin_LIBRARIES} 
 )
