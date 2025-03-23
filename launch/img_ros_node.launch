@@ -1,6 +1,7 @@
 <launch>
+    <!-- 启动图像接收与发布节点 -->
+    <node pkg="fmt_ros_wrapper" type="image_ros_wrapper" name="image_ros_wrapper" output="screen" />
 
-    <node pkg="fmt_ros_wrapper" type="image_ros_wrapper" name="image_ros_wrapper" output="screen">
-    </node>
-
+    <!-- 启动 RViz 并加载特定配置 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fmt_ros_wrapper)/rviz/img_show.rviz" />
 </launch>
