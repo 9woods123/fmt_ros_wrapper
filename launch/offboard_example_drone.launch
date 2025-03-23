@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="fmt_ros_wrapper" type="drone_offboard" name="drone_offboard" output="screen">
+    </node>
+    
+</launch>

@@ -9,12 +9,18 @@ int main(int argc, char **argv) {
     ros::ServiceClient stream_rate_client =
         nh.serviceClient<mavros_msgs::StreamRate>("/mavros/set_stream_rate");
 
+
+
+
     // 定义要更改频率的消息 ID 和对应的频率
-    int message_ids[] = {31, 32};  // MAVLINK_MSG_ID_ATTITUDE_QUATERNION (31) 和 MAVLINK_MSG_ID_LOCAL_POSITION_NED (32)
-    int message_rates[] = {100, 100};  // 对应的频率：50Hz for id 31, 100Hz for id 32
+    int message_ids[] = {24, 31, 32, 105}; 
+    // MAVLINK_MSG_ID_ATTITUDE_QUATERNION (31) 和 MAVLINK_MSG_ID_LOCAL_POSITION_NED (32)
+    //message_id = 105; // MAVLINK_MSG_ID_HIGHRES_IMU
+    // MAVLINK_MSG_ID_GPS_RAW_INT 24
+    int message_rates[] = {100, 100, 100, 100};  // 对应的频率：50Hz for id 31, 100Hz for id 32
 
     // 使用 for 循环申请每个消息的频率
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 4; ++i) {
         mavros_msgs::StreamRate srv;
         srv.request.stream_id = message_ids[i];
         srv.request.message_rate = message_rates[i];

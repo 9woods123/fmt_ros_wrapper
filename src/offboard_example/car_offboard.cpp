@@ -47,8 +47,6 @@ int main(int argc, char** argv)
 
 
     while (ros::ok()) {
-        std::cout<<"========================"<<std::endl;
-        
 
         setpoint_msg.header.stamp = ros::Time::now();
         setpoint_msg.coordinate_frame =mavros_msgs::Waypoint::FRAME_BODY_FRD;;
